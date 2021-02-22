@@ -1,6 +1,26 @@
 
+window.addEventListener("orientationchange", function() {
+    if (window.orientation == 0) {
+        document.querySelector('.loader').style.display = 'none';
+        document.querySelector('.loader').style.opacity = '0';
+    } else if (window.orientation == 90) {
+        alert('For better experience turn back!');
+        document.querySelector('.loader').style.display = 'flex';
+        document.querySelector('.loader').style.opacity = '1';
+        
+    }
+  }, false);  
+
 document.onreadystatechange = function() { 
     if (document.readyState !== "complete") { 
+        const preloadImages = () => {
+            return new Promise((resolve, reject) => {
+                imagesLoaded(document.querySelectorAll('img'), resolve);
+            });
+        };
+        preloadImages();
+    }    
+    else {
         TweenMax.to('.loader', {
             duration: 2,
             opacity: 0,
@@ -408,6 +428,15 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-imagesLoaded(document.querySelectorAll(['sel__image']), {background: true}, () => {
-    console.log('image loaded');
-});
+
+
+ 
+//  const alertOrientation = new Promise((resolve, reject) => {
+//     if (window.matchMedia("(orientation: portrait)").matches) {
+//         alert('For best experience swith on landscape mode')
+//      }
+//   });
+  
+//   alertOrientation.then(resolve, handleRejectedA)
+
+    
