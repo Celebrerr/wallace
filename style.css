@@ -103,7 +103,6 @@ svg {
    display: none;
    scrollbar-width: none;
 }
-
 .underline {
     color: rgb(230, 230, 230);
     text-decoration: none;
@@ -215,11 +214,10 @@ svg {
     align-items: center;
 }
 .menu-links a {
-   font-size: 120px;
+   font-size: 12vh;
    margin-bottom: 32px;
    text-align: center;
 }
-
 .menu-social {
     position: absolute;
     right: 48px;
@@ -397,7 +395,10 @@ svg {
 }
 .work__labels {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+.work__labels-col {
+    display: flex;
     justify-content: space-between;
 }
 .work__label {
@@ -622,11 +623,13 @@ svg {
 }
 
 @media screen and (min-width: 2000px) {
+    h1 {
+        font-size: 150px;
+    }
     .distortion {
         width: 60vh;
         height: 70vh;
     }
-
     .work-image {
         width: 70vh;
         height: 80vh;
@@ -680,6 +683,9 @@ svg {
     }
     .work__labels {
         padding-top: 64px;
+    }
+    .work__labels-col {
+        flex-direction: column;
     }
     .work__label {
         display: flex;

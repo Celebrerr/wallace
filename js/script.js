@@ -257,7 +257,6 @@ function heroTransition() {
         delay: 1,
         opacity: 0,
         y: 100,
-        rotate: rot,
         ease: ease,
         stagger: .1,
     });   
@@ -322,12 +321,12 @@ function workTransition() {
             });
         }      
     };  
-    function hide(element) {
-        gsap.set(element, {
-            duration: 2,
-            opacity: 0
-        });
-    };
+    // function hide(element) {
+    //     gsap.set(element, {
+    //         duration: 2,
+    //         opacity: 0
+    //     });
+    // };
     gsap.registerPlugin(ScrollTrigger);
     
     gsap.utils.toArray(".as_work").forEach(function(element) {      
@@ -353,8 +352,7 @@ function aboutTransition() {
     TweenMax.from('.ai_about-title', 1.5, {
         delay: .8,
         opacity: 0,
-        y: 200,
-        rotate: rot,
+        y: 100,
         ease: ease,
     });
     TweenMax.from('.about_line', 2, {
@@ -368,7 +366,6 @@ function aboutTransition() {
         delay: 1,
         opacity: 0,
         y: 100,
-        rotate: rot,
         ease: ease,
         stagger: 0.1
     }); 
@@ -428,15 +425,5 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-
-
- 
-//  const alertOrientation = new Promise((resolve, reject) => {
-//     if (window.matchMedia("(orientation: portrait)").matches) {
-//         alert('For best experience swith on landscape mode')
-//      }
-//   });
-  
-//   alertOrientation.then(resolve, handleRejectedA)
 
     
